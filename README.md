@@ -63,3 +63,31 @@ pip install -r requirements.txt
 Running the Application
 Run the Flask application: cmd/terminal: py run.py
 Open your web browser and go to http://127.0.0.1:5000/.
+
+
+
+
+
+Project/
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── models.py
+│   └── templates/
+│       ├── base.html
+│       ├── homepage.html
+│       ├── post_detail.html
+│       └── admin.html
+│
+├── static/
+│   ├── css/
+│   │   └── styles.css
+│  
+│
+├── venv/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── run.py
+└── config.py
