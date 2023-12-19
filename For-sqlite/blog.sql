@@ -10,4 +10,3 @@
 --   ('Post 2 Title', 'Content for post 2.'),
 --   ('Post 3 Title', 'Content for post 3.');
 SELECT * FROM postnew1;
-
