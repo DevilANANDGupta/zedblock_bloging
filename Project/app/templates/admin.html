@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <h1 style="color: #007bff;" class="mb-4">Admin Panel</h1>
+
+    <!-- Add Post Form -->
+    <form id="addPostForm" method="post" action="{{ url_for('add_post') }}" onsubmit="return validateForm()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content:</label>
+        <textarea name="content" id="content" class="form-control" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Post</button>
+    </form>
+
+    <!-- Post List with Update and Delete -->
+    <ul class="list-group mt-4">
+      {% for post in posts %}
+        <li class="list-group-item" style="position: relative; display: flex; justify-content: space-between; margin-bottom: 10px;">
+          {{ post.title }}
+          <a href="{{ url_for('delete_post', post_id=post.id) }}" class="btn btn-danger btn-sm float-end">Delete</a>
+          <!-- Button to open update form -->
+          <a href="#" onclick="toggleUpdateForm('{{ post.id }}')" class="btn btn-info btn-sm float-end me-2">Update</a>
+          <!-- Update Post Form for each post (initially hidden) -->
+          <form id="updatePostForm_{{ post.id }}" method="post" action="{{ url_for('update_post', post_id=post.id) }}" onsubmit="return validateUpdateForm('{{ post.id }}')" style="display: none;">
+            <div class="mb-3">
+              <label for="updateTitle" class="form-label">Update Title:</label>
+              <input type="text" name="updateTitle" id="updateTitle_{{ post.id }}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateContent" class="form-label">Update Content:</label>
+              <textarea name="updateContent" id="updateContent_{{ post.id }}" class="form-control" required></textarea>
+            </div>
+            <input type="hidden" name="postId" id="postId_{{ post.id }}" value="{{ post.id }}">
+            <button type="submit" class="btn btn-success btn-sm">Update Post</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <script>
+    // Update form validation
+    function validateUpdateForm(postId) {
+      var updateTitle = document.getElementById('updateTitle_' + postId).value;
+      var updateContent = document.getElementById('updateContent_' + postId).value;
+
+      if (updateTitle.trim() === '' || updateContent.trim() === '') {
+        alert('Update title and content are required!');
+        return false; // Prevent form submission
+      } else {
+        return true; // Allow form submission
+      }
+    }
+
+    // Toggle update form visibility
+    function toggleUpdateForm(postId) {
+      // Hide all other update forms
+      {% for post in posts %}
+        document.getElementById('updatePostForm_{{ post.id }}').style.display = 'none';
+      {% endfor %}
+
+      // Show the update form for the clicked post
+      document.getElementById('updatePostForm_' + postId).style.display = 'block';
+    }
+
+    // Prompt the user for a password
+    var enteredPassword = prompt("Please enter the admin password:");
+
+    // Check if the entered password is correct
+    if (enteredPassword === "zed") {
+      // Password is correct, continue with the form
+      showAdminPanel();
+    } else {
+      // Password is incorrect, redirect to the homepage
+      window.location.href = "{{ url_for('home') }}";
+    }
+
+    function showAdminPanel() {
+      // Add your existing HTML content here after password verification
+      // ...
+
+
+      // Add your existing JavaScript functions here
+      // ...
+    }
+  </script>
+{% endblock %}

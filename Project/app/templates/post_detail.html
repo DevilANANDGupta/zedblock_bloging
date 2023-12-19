@@ -1,0 +1,11 @@
+<!-- templates/post_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <h1 style="color: #007bff;">{{ post.title }}</h1>
+    <p style="color: #6c757d; line-height: 1.6;">{{ post.content }}</p>
+    <p style="color: #868e96; font-size: 0.8em;">Published on {{ post.pub_date }}</p>
+  </div>
+{% endblock %}

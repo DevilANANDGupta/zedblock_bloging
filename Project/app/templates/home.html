@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Home - My Blog{% endblock %}
+{% block styles %}
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+    h1, h3 {
+      margin-bottom: 20px;
+    }
+    .card {
+      background-color: #007bff;
+      border: 1px solid hsla(210, 14%, 89%, 0.791);
+      border-radius: 8px;
+      transition: transform 0.3s;
+      width: 100%;
+      min-height: 200px; /* Set a minimum height */
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card-title {
+      color: #007bff;
+    }
+    .card-text {
+      color: #6c757d;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    @media (min-width: 576px) {
+      /* Adjust the width for small screens and above */
+      .card {
+        width: 48%; /* You can adjust this value based on your design */
+      }
+    }
+
+    @media (min-width: 768px) {
+      /* Adjust the width for medium screens and above */
+      .card {
+        width: 31%; /* You can adjust this value based on your design */
+      }
+    }
+
+    @media (min-width: 992px) {
+      /* Adjust the width for large screens and above */
+      .card {
+        width: 50%; /* You can adjust this value based on your design */
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      {% for post in posts %}
+        <div class="col-md-4 mb-4">
+          <div class="card" onclick="window.location.href='{{ url_for('post_detail', post_id=post.id) }}'">
+            <div class="card-body">
+              <h2 class="card-title">{{ post.title }}</h2>
+              <p class="card-text">{{ post.description }}</p>
+              <p class="card-text">Published on {{ post.pub_date }}</p>
+              <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+{% endblock %}
