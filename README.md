@@ -123,4 +123,4 @@ zedblock_bloging/For-sqlite
 run.py: Script to run the Flask application.
 
 config.py: Configuration settings for the application.
-![] (Screenshot 2023-12-20 012821.png)
+![](Screenshot 2023-12-20 012821.png)
