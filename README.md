@@ -32,8 +32,8 @@ Welcome to your Personal Blog Platform! This platform is designed for sharing pe
 
 Ensure you have the following installed on your machine:
 
-- **Python:** Version X.X
-- **Flask:** Version X.X
+- **Python:** 
+- **Flask:** 
 - **SQLite**
 
 ### Installation
@@ -42,3 +42,24 @@ Ensure you have the following installed on your machine:
 
    ```bash
    git clone https://github.com/your-username/personal-blog-platform.git
+
+2. Navigate to the project directory:
+
+  cd personal-blog-platform
+  
+3.Create a virtual environment:
+
+  python -m venv venv
+4.Activate the virtual environment:
+
+On Linux/macOS:
+source venv/bin/activate
+On Windows:
+.\venv\Scripts\activate
+5. Install dependencies
+pip install -r requirements.txt
+
+
+Running the Application
+Run the Flask application: cmd/terminal: py run.py
+Open your web browser and go to http://127.0.0.1:5000/.
