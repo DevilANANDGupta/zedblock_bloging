@@ -68,26 +68,22 @@ Open your web browser and go to http://127.0.0.1:5000/.
 
 
 
-Project/
-│
-├── app/
-│   ├── __init__.py
-│   ├── routes.py
-│   ├── models.py
-│   └── templates/
-│       ├── base.html
-│       ├── homepage.html
-│       ├── post_detail.html
-│       └── admin.html
-│
-├── static/
-│   ├── css/
-│   │   └── styles.css
-│  
-│
-├── venv/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── run.py
-└── config.py
+app/: Contains the main Flask application.
+
+init.py: Initializes the Flask application.
+routes.py: Defines the application routes.
+models.py: Defines the database models.
+templates/: Contains HTML templates.
+static/: Contains static files such as CSS and JavaScript.
+
+venv/: Virtual environment folder.
+
+.gitignore: Specifies files and directories to be ignored by Git.
+
+README.md: Project documentation.
+
+requirements.txt: List of project dependencies.
+
+run.py: Script to run the Flask application.
+
+config.py: Configuration settings for the application.
