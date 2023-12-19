@@ -6,13 +6,12 @@ from app.models import postnew1 as Post
 def home():
     posts = Post.query.all()
     print(posts)
-    return render_template('home.html', posts=posts)
+    
 
 @app.route('/post/<int:post_id>')
 def post_detail(post_id):
     post = Post.query.get_or_404(post_id)
     return render_template('post_detail.html', post=post)
-
 @app.route('/admin')
 def admin():
     posts = Post.query.all()
