@@ -90,7 +90,7 @@ The project structure is organized as follows:
 ```
 zedblock_bloging/
 │
-├── app/
+├── app/Project
 │   ├── __init__.py
 │   ├── routes.py
 │   ├── models.py
@@ -112,6 +112,13 @@ zedblock_bloging/
 ├── requirements.txt
 ├── run.py
 └── config.py
+
+zedblock_bloging/For-sqlite
+│
+├── blog.db
+├── blog.sql
+
+
 
 run.py: Script to run the Flask application.
 
