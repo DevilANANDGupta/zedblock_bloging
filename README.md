@@ -84,6 +84,39 @@ README.md: Project documentation.
 
 requirements.txt: List of project dependencies.
 
+
+
+
+## Project Structure
+
+The project structure is organized as follows:
+
+```
+zedblock_bloging/
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── models.py
+│   └── templates/
+│       ├── base.html
+│       ├── homepage.html
+│       ├── post_detail.html
+│       └── admin.html
+│
+├── static/
+│   ├── css/
+│   │   └── styles.css
+│   
+│       
+│
+├── venv/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── run.py
+└── config.py
+
 run.py: Script to run the Flask application.
 
 config.py: Configuration settings for the application.
