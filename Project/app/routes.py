@@ -6,7 +6,7 @@ from app.models import postnew1 as Post
 def home():
     posts = Post.query.all()
     print(posts)
-    return render_template('home.html', posts=posts)
+    
 
 @app.route('/post/<int:post_id>')
 def post_detail(post_id):
