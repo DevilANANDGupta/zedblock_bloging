@@ -1,5 +1,5 @@
 # Personal Blog Platform
-
+![](Screenshot.png)
 This is a simple personal blog platform where you can share your thoughts and stories. Users can read posts, and you, as the admin, can add or delete posts.
 
 ## Table of Contents
@@ -123,4 +123,4 @@ zedblock_bloging/For-sqlite
 run.py: Script to run the Flask application.
 
 config.py: Configuration settings for the application.
-![](Screenshot.png)
+
