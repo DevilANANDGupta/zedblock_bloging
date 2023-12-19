@@ -74,7 +74,7 @@ init.py: Initializes the Flask application.
 routes.py: Defines the application routes.
 models.py: Defines the database models.
 templates/: Contains HTML templates.
-static/: Contains static files such as CSS and JavaScript.
+static/: Contains static files such as CSS.
 
 venv/: Virtual environment folder.
 
