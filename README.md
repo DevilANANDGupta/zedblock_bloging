@@ -37,7 +37,7 @@ Ensure you have the following installed on your machine:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/personal-blog-platform.git
+   [git clone https://github.com/your-username/personal-blog-platform.git](https://github.com/DevilANANDGupta/zedblock_bloging.git)
 
 2. Navigate to the project directory:
 
